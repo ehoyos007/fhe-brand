@@ -15,6 +15,7 @@
   ],
   "exports": {
     ".": "./src/index.ts",
+    "./package.json": "./package.json",
     "./tokens.css": "./src/tokens/tokens.css",
     "./tailwind.preset": "./src/tokens/tailwind.preset.ts",
     "./components": "./src/components/index.ts",
