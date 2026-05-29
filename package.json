@@ -1,0 +1,36 @@
+{
+  "name": "@fhe/brand",
+  "version": "0.1.0",
+  "private": false,
+  "description": "FirstHealth Enrollment shared brand design system — the portfolio-default DS. Tokens, components, icons.",
+  "repository": {
+    "type": "git",
+    "url": "github:ehoyos007/fhe-brand"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "src",
+    "DESIGN.md"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens.css": "./src/tokens/tokens.css",
+    "./tailwind.preset": "./src/tokens/tailwind.preset.ts",
+    "./components": "./src/components/index.ts",
+    "./icons": "./src/icons/index.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

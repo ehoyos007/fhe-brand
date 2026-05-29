@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>First Health Enrollment — Brand & Design System</title>
+<link rel="icon" type="image/png" href="assets/fhe-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="ds-topbar">
+  <div class="ds-shell ds-topbar-inner">
+    <div class="ds-topbar-left">
+      <img src="assets/fhe-logo.png" alt="First Health Enrollment" />
+      <div class="ds-topbar-meta">
+        <strong>Brand & Design System</strong>
+        <span>v1.0 · April 2026</span>
+      </div>
+    </div>
+    <nav class="ds-topbar-nav">
+      <a href="#logo">Logo</a>
+      <a href="#color">Color</a>
+      <a href="#type">Type</a>
+      <a href="#spacing">Spacing</a>
+      <a href="#icons">Icons</a>
+      <a href="#buttons">Components</a>
+      <a href="#operational">Operational</a>
+      <a href="#templates">Templates</a>
+      <a href="#voice">Voice</a>
+    </nav>
+  </div>
+</header>
+
+<section class="ds-hero">
+  <div class="ds-shell">
+    <span class="ds-hero-eyebrow">● Brand System · Internal + External</span>
+    <h1>Coverage made simple, by design.</h1>
+    <p>The complete brand and product design system for First Health Enrollment — a licensed health insurance enrollment agency. Built for marketing, agent workflows, and everything in between. Trustworthy, clear, modern, operational.</p>
+    <dl class="ds-hero-meta">
+      <div><dt>Brand</dt><dd>First Health Enrollment</dd></div>
+      <div><dt>Industry</dt><dd>Enrollment Agency</dd></div>
+      <div><dt>System scope</dt><dd>Marketing + CRM + Compliance</dd></div>
+      <div><dt>Last updated</dt><dd>April 29, 2026</dd></div>
+    </dl>
+  </div>
+</section>
+
+<main id="root"></main>
+
+<footer class="ds-footer">
+  <div class="ds-shell">
+    <div>
+      <img src="assets/fhe-logo.png" alt="" />
+      <p>First Health Enrollment is a licensed health insurance enrollment agency. We do not underwrite or issue policies. Plan availability, benefits, and pricing vary by state and carrier.</p>
+    </div>
+    <div>
+      <h5>System</h5>
+      <ul><li><a href="#logo">Logo</a></li><li><a href="#color">Color</a></li><li><a href="#type">Typography</a></li><li><a href="#icons">Iconography</a></li></ul>
+    </div>
+    <div>
+      <h5>Components</h5>
+      <ul><li><a href="#buttons">Buttons</a></li><li><a href="#forms">Forms</a></li><li><a href="#operational">Operational</a></li><li><a href="#templates">Templates</a></li></ul>
+    </div>
+    <div>
+      <h5>Brand</h5>
+      <ul><li><a href="#voice">Voice & tone</a></li><li><a>Legal</a></li><li><a>Privacy</a></li><li><a>Contact</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="icons.jsx"></script>
+<script type="text/babel" src="foundations.jsx"></script>
+<script type="text/babel" src="components-core.jsx"></script>
+<script type="text/babel" src="components-operational.jsx"></script>
+<script type="text/babel" src="templates.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "headlineFont": "Poppins",
+  "accentHue": 220,
+  "density": "comfortable",
+  "radius": 8,
+  "darkSurface": false
+}/*EDITMODE-END*/;
+
+function App() {
+  const [tweaks, setTweak] = useTweaks ? useTweaks(TWEAK_DEFAULTS) : [TWEAK_DEFAULTS, () => {}];
+
+  React.useEffect(() => {
+    const r = document.documentElement;
+    const fontMap = {
+      "Poppins": '"Poppins", "Helvetica Neue", Arial, sans-serif',
+      "Helvetica": '"Helvetica Neue", Helvetica, Arial, sans-serif',
+      "Fraunces": '"Fraunces", "Georgia", serif',
+      "Space Grotesk": '"Space Grotesk", "Helvetica Neue", Arial, sans-serif'
+    };
+    r.style.setProperty("--font-head", fontMap[tweaks.headlineFont] || fontMap.Poppins);
+    r.style.setProperty("--r-md", `${tweaks.radius}px`);
+    if (tweaks.headlineFont && !document.getElementById("tw-font")) {
+      const link = document.createElement("link");
+      link.id = "tw-font";
+      link.rel = "stylesheet";
+      link.href = "https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Space+Grotesk:wght@500;600;700&display=swap";
+      document.head.appendChild(link);
+    }
+    document.body.style.background = tweaks.darkSurface ? "var(--n-900)" : "var(--n-25)";
+  }, [tweaks]);
+
+  return (
+    <>
+      <FoundationLogo />
+      <FoundationColor />
+      <FoundationType />
+      <FoundationSpacing />
+      <FoundationIcons />
+      <ComponentsButtons />
+      <ComponentsForms />
+      <ComponentsBadgesAlerts />
+      <ComponentsNav />
+      <ComponentsOperational />
+      <Templates />
+      <VoiceTone />
+
+      {TweaksPanel && (
+        <TweaksPanel title="Tweaks">
+          <TweakSection title="Brand">
+            <TweakSelect label="Headline font" value={tweaks.headlineFont} onChange={(v) => setTweak("headlineFont", v)} options={["Poppins", "Helvetica", "Fraunces", "Space Grotesk"]} />
+            <TweakSlider label="Radius (md)" min={2} max={16} step={1} value={tweaks.radius} onChange={(v) => setTweak("radius", v)} />
+            <TweakToggle label="Dark page surface" value={tweaks.darkSurface} onChange={(v) => setTweak("darkSurface", v)} />
+          </TweakSection>
+        </TweaksPanel>
+      )}
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+
+</body>
+</html>

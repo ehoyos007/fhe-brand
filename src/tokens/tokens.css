@@ -1,0 +1,130 @@
+/* @fhe/brand · tokens.css
+ * FirstHealth Enrollment Brand Design System v1.0
+ * Sourced from /packages/brand/_bundle-source/styles.css
+ * See ../../../DESIGN.md for the rules these tokens enforce.
+ */
+
+:root {
+  /* ---------- Brand Core ---------- */
+  --fhe-navy: #0B1D3A;
+  --fhe-navy-700: #122A52;
+  --fhe-navy-600: #1A3A6E;
+  --fhe-blue: #2563EB;
+  --fhe-blue-600: #1D4FCB;
+  --fhe-blue-400: #4D7DF0;
+  --fhe-light-blue: #9EC5FF;
+  --fhe-soft-blue: #E8F1FF;
+  --fhe-off-white: #F6F8FA;
+
+  /* ---------- Neutrals (cool gray ramp, navy-tinted) ---------- */
+  --n-0: #FFFFFF;
+  --n-25: #FAFBFC;
+  --n-50: #F4F6F8;
+  --n-100: #E7EBF0;
+  --n-200: #D4DAE2;
+  --n-300: #B6BFCC;
+  --n-400: #8C97A8;
+  --n-500: #69748A;
+  --n-600: #4D5870;
+  --n-700: #353F55;
+  --n-800: #1F2940;
+  --n-900: #0F172E;
+
+  /* ---------- Semantic ---------- */
+  --success-50: #ECFDF3;
+  --success-100: #D1FADF;
+  --success-500: #12B76A;
+  --success-700: #027A48;
+
+  --warning-50: #FFFAEB;
+  --warning-100: #FEF0C7;
+  --warning-500: #F79009;
+  --warning-700: #B54708;
+
+  --error-50: #FEF3F2;
+  --error-100: #FEE4E2;
+  --error-500: #EF4444;
+  --error-700: #B42318;
+
+  --info-50: #EFF6FF;
+  --info-100: #DBEAFE;
+  --info-500: #2563EB;
+  --info-700: #1849A9;
+
+  /* ---------- Radii ---------- */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-2xl: 20px;
+  --r-pill: 999px;
+
+  /* ---------- Shadows (all navy-tinted, alpha ≤ 0.16) ---------- */
+  --shadow-xs: 0 1px 2px rgba(11, 29, 58, 0.06);
+  --shadow-sm: 0 1px 3px rgba(11, 29, 58, 0.08), 0 1px 2px rgba(11, 29, 58, 0.04);
+  --shadow-md: 0 4px 12px rgba(11, 29, 58, 0.08), 0 2px 4px rgba(11, 29, 58, 0.04);
+  --shadow-lg: 0 12px 28px rgba(11, 29, 58, 0.12), 0 4px 8px rgba(11, 29, 58, 0.05);
+  --shadow-xl: 0 24px 48px rgba(11, 29, 58, 0.16);
+  --shadow-focus: 0 0 0 4px rgba(37, 99, 235, 0.18);
+
+  /* ---------- Spacing scale (4px base) ---------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+
+  /* ---------- Typography stacks ---------- */
+  --font-head: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--n-800);
+  background: var(--n-25);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+  line-height: 1.5;
+}
+
+/* Universal tabular numerics — see DESIGN.md §3 */
+.tnum,
+[data-fhe-tabular-nums] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion — see DESIGN.md §1 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
