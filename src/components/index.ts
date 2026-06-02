@@ -16,6 +16,7 @@ export {
 export { Badge, type BadgeProps, type BadgeTone } from "./badge";
 export { Alert, type AlertProps, type AlertTone } from "./alert";
 export { Avatar, type AvatarProps, type AvatarTone, type AvatarSize } from "./avatar";
+export { Logo, type LogoProps } from "./logo";
 
 // CRM building blocks (Radix + brand tokens) — PLAN.md phases A1/A2/A3.
 export * from "./primitives"; // A1 — foundational primitives
