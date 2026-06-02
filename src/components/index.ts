@@ -17,5 +17,7 @@ export { Badge, type BadgeProps, type BadgeTone } from "./badge";
 export { Alert, type AlertProps, type AlertTone } from "./alert";
 export { Avatar, type AvatarProps, type AvatarTone, type AvatarSize } from "./avatar";
 
-// CRM building blocks (Radix + brand tokens) — populated by PLAN.md phases A1/A2/A3.
-export * from "./primitives";
+// CRM building blocks (Radix + brand tokens) — PLAN.md phases A1/A2/A3.
+export * from "./primitives"; // A1 — foundational primitives
+export * from "./blocks"; // A2 — DataTable, Board, Command, Calendar, DatePicker, EmptyState, Toolbar
+export * from "./shell"; // A3 — AppShell, Sidebar, PageHeader, SplitPane
