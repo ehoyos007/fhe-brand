@@ -3,8 +3,11 @@
 > Created: 2026-06-01
 > Driver: Grid CRM company-wide rollout needs @fhe/brand as its SOLE design system.
 > Source decisions: FHE SharedBrain (Grid rollout + DS captures), 2026-06-01 planning session.
-> Status: IN PROGRESS — Phase A0 executing.
-> Branch: `feat/expand-ds`
+> Status: **A0–A3 COMPLETE** (2026-06-02, v0.5.1). A4 (polish/release) remains.
+> Branch: `feat/expand-ds` @ `874423d` (LOCAL only — not pushed/merged).
+>
+> **Shipped:** 32 components — 5 original + 15 A1 primitives + 7 A2 blocks + 4 A3 shell + `Logo`.
+> 29/29 tests, tsc clean. Logo vectorized from PNG + color-flattened to 3 brand colors.
 
 ---
 
@@ -38,7 +41,7 @@ built on Radix headless primitives + brand tokens.
 
 ## Phases
 
-### A0 — Tooling & foundation  *(executing)*
+### A0 — Tooling & foundation  ✅ COMPLETE
 - Bump `0.1.0 → 0.2.0`.
 - Declare peerDependencies: Radix set (dialog, dropdown-menu, select, tabs, tooltip, popover,
   accordion, checkbox, radio-group, switch, slot), `cmdk`, `sonner`, `@dnd-kit/*`,
@@ -48,31 +51,36 @@ built on Radix headless primitives + brand tokens.
 - Smoke test on existing Btn to prove the harness.
 - **Build decision:** keep raw-TS ship for now.
 
-### A1 — Foundational primitives  *(unblocks Grid B1)*
+### A1 — Foundational primitives  ✅ COMPLETE (15)
 Radix + brand tokens, light-themed, tested:
-Dialog/Modal · Drawer/Sheet · DropdownMenu · Select (rich) · Tabs · Tooltip · Popover ·
+Dialog/Modal · Drawer/Sheet · DropdownMenu · Tabs · Tooltip · Popover ·
 Accordion · Breadcrumb · Pagination · Checkbox · Radio · Switch · Skeleton · Spinner · Toast (sonner).
+Note: native `Select` already shipped (field.tsx); rich/searchable **Combobox deferred to A2.1** (cmdk-based).
 
-### A2 — Complex building blocks  *(unblocks Grid B2+)*
-DataTable (generalize Grid's TanStack system: sort/filter/group/virtualize/column-prefs) ·
-Board/Kanban (dnd-kit) · CommandPalette (cmdk) · DatePicker/Calendar · EmptyState · FilterBar/Toolbar.
+### A2 — Complex building blocks  ✅ COMPLETE (7)
+DataTable (TanStack, sortable; virtualization deferred to A2.1) · Board/Kanban (dnd-kit, controlled) ·
+CommandPalette + CommandDialog (cmdk) · Calendar + DatePicker (date-fns) · EmptyState · Toolbar/FilterBar.
 
-### A3 — Layout shell
-AppShell · Sidebar (brand-neutral, collapsible, grouped, searchable) · PageHeader · SplitPane.
-Grid injects its `nav-config.ts` into these.
+### A3 — Layout shell  ✅ COMPLETE (4)
+AppShell · Sidebar (brand-neutral, collapsible, grouped; `SidebarItem as={Link}`) · PageHeader · SplitPane.
+Plus `Logo` (vectorized lockup, 3 flat brand colors). Grid injects its `nav-config.ts` into these.
 
-### A4 — Polish & release
-Per-component tests + Storybook stories · a11y pass · update `DESIGN.md` · evaluate `tsup` build ·
-tag releases (`v0.2.x`). Consumers pin the tag once published.
+### A4 — Polish & release  ⬜ REMAINING
+Per-component Storybook stories · broaden tests · a11y pass · exclude test files from publish
+(`.npmignore`) · evaluate `tsup` build · color-quantize source assets · tag a release so Grid can
+pin `@fhe/brand@github:#v0.x` instead of the local copy. Optional: A2.1 = DataTable virtualization +
+cmdk Combobox + Logo mark-only/`currentColor` variant for the collapsed sidebar.
 
 ---
 
 ## Consumption by Grid (co-dev)
 
-During active co-development Grid links brand via `file:../fhe-brand` (or a pushed `github:#feat/expand-ds`
-ref if Turbopack rejects the file link — the documented "leaves filesystem root" panic). Once brand v0.2.0
-is tagged, Grid pins `@fhe/brand@github:ehoyos007/fhe-brand#v0.2.0` per `DESIGN_SYSTEM.md`.
+Grid consumes brand as a **real copy** (not a symlink): `.npmrc` sets `install-links=true` +
+`legacy-peer-deps=true` (Turbopack rejects the file-symlink — the "leaves filesystem root" panic).
+**⚠️ Co-dev resync caveat:** npm caches the copy by version, so after editing brand you MUST
+`npm version <bump>` in fhe-brand, then `npm install ../fhe-brand` in Grid — otherwise Grid keeps the
+stale copy. Once A4 tags a release, switch Grid to pin `@fhe/brand@github:ehoyos007/fhe-brand#v0.x`.
 
 ## Critical path
 
-`A0 → A1 → (Grid B1) → A2/A3 → (Grid B2…B5)`. A0 may run parallel to Grid B0.
+`A0 → A1 → A2/A3 → Logo` ✅ done → **`(Grid B1)`** next → `(Grid B2…B6)`.

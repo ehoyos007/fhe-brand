@@ -16,3 +16,8 @@
 
 ### Logo color-flatten — 2026-06-02
 - Quantized PNG to 3 brand colors (sharp luminance buckets) before re-tracing -> 31 paths, exactly navy #0B1D3A / light-blue #9EC5FF / white. Cleaner than the 43-band original (true navy text). Regenerated logo.tsx + asset. v0.5.1.
+
+### Session wrap-up — 2026-06-02
+- Program A COMPLETE through A3 + Logo. v0.5.1 @ 874423d (local only, NOT pushed/merged).
+- 32 components, 29/29 tests, tsc clean. A4 (polish/release/tag) remains.
+- Handoff: .claude/handoffs/feat-expand-ds.md. Primary downstream thread = Grid B1.
