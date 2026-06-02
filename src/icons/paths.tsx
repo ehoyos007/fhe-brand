@@ -279,6 +279,156 @@ export const iconPaths = {
       <circle cx="4" cy="18" r="1" fill="currentColor" />
     </>
   ),
+
+  // -- Grid CRM nav set (added for fhe-grid-stream sidebar) ----------------
+  cart: (
+    <>
+      <path d="M3 4h2l2.4 11.4a1.5 1.5 0 0 0 1.5 1.2h7.7a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.5" />
+      <circle cx="9.5" cy="20" r="1.2" />
+      <circle cx="17" cy="20" r="1.2" />
+    </>
+  ),
+  trophy: (
+    <>
+      <path d="M8 4h8v5a4 4 0 0 1-8 0V4z" />
+      <path d="M8 6H5v2a3 3 0 0 0 3 3M16 6h3v2a3 3 0 0 1-3 3" />
+      <path d="M12 13v4M9 20h6M10 20v-1.5a2 2 0 0 1 4 0V20" />
+    </>
+  ),
+  gauge: (
+    <>
+      <path d="M4 18a8 8 0 1 1 16 0" />
+      <path d="M12 13l4-4" />
+      <circle cx="12" cy="13" r="1.2" fill="currentColor" />
+    </>
+  ),
+  "message-plus": (
+    <>
+      <path d="M21 11.5a7.5 7.5 0 0 1-10.7 6.8L4 20l1.7-5A7.5 7.5 0 1 1 21 11.5z" />
+      <path d="M12 8v6M9 11h6" />
+    </>
+  ),
+  headset: (
+    <>
+      <path d="M5 14v-2a7 7 0 0 1 14 0v2" />
+      <rect x="3.5" y="13" width="3.5" height="6" rx="1.5" />
+      <rect x="17" y="13" width="3.5" height="6" rx="1.5" />
+      <path d="M19 19a3 3 0 0 1-3 3h-2" />
+    </>
+  ),
+  "user-circle": (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="10" r="3" />
+      <path d="M6.5 18.5a6 6 0 0 1 11 0" />
+    </>
+  ),
+  megaphone: (
+    <>
+      <path d="M4 10v4a1.5 1.5 0 0 0 1.5 1.5H8l9 4.5V5L8 9.5H5.5A1.5 1.5 0 0 0 4 11" />
+      <path d="M8 15.5V9.5M20 9.5a3 3 0 0 1 0 5" />
+    </>
+  ),
+  tag: (
+    <>
+      <path d="M4 4h7.5L20 12.5a2 2 0 0 1 0 2.8l-4.7 4.7a2 2 0 0 1-2.8 0L4 11.5V4z" />
+      <circle cx="8.5" cy="8.5" r="1.2" fill="currentColor" />
+    </>
+  ),
+  database: (
+    <>
+      <ellipse cx="12" cy="6" rx="7" ry="3" />
+      <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
+      <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+    </>
+  ),
+  wrench: (
+    <>
+      <path d="M15 5.5a4 4 0 0 0-5.3 4.7L4 16l4 4 5.8-5.7A4 4 0 0 0 18.5 9l-2.6 2.6-2.4-.5-.5-2.4L15 5.5z" />
+    </>
+  ),
+  bug: (
+    <>
+      <rect x="8" y="8" width="8" height="11" rx="4" />
+      <path d="M9 6.5a3 3 0 0 1 6 0" />
+      <path d="M8 12H4M16 12h4M8 16H4.5M16 16h3.5M9 9L6.5 6.5M15 9l2.5-2.5" />
+    </>
+  ),
+  lightbulb: (
+    <>
+      <path d="M9 16a6 6 0 1 1 6 0c-.6.5-1 1.2-1 2v.5h-4V18c0-.8-.4-1.5-1-2z" />
+      <path d="M10 21h4" />
+    </>
+  ),
+  "chat-dot": (
+    <>
+      <path d="M21 11.5a7.5 7.5 0 0 1-10.7 6.8L4 20l1.7-5A7.5 7.5 0 1 1 21 11.5z" />
+      <circle cx="8.5" cy="11.5" r="0.8" fill="currentColor" />
+      <circle cx="12" cy="11.5" r="0.8" fill="currentColor" />
+      <circle cx="15.5" cy="11.5" r="0.8" fill="currentColor" />
+    </>
+  ),
+  clipboard: (
+    <>
+      <rect x="5" y="5" width="14" height="16" rx="2" />
+      <rect x="9" y="3" width="6" height="4" rx="1.2" />
+      <path d="M9 12h6M9 16h4" />
+    </>
+  ),
+  ticket: (
+    <>
+      <path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 1-2 2H6a2 2 0 0 1-2-2 2 2 0 0 0 0-4z" />
+      <path d="M14 6v2M14 11v2M14 16v0" />
+    </>
+  ),
+  "bar-chart": (
+    <>
+      <path d="M4 20V4" />
+      <path d="M4 20h16" />
+      <rect x="7" y="12" width="3" height="5" rx="0.8" />
+      <rect x="12.5" y="8" width="3" height="9" rx="0.8" />
+      <rect x="18" y="5" width="3" height="12" rx="0.8" />
+    </>
+  ),
+  graduation: (
+    <>
+      <path d="M12 4L2 9l10 5 10-5-10-5z" />
+      <path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" />
+      <path d="M22 9v5" />
+    </>
+  ),
+  building: (
+    <>
+      <rect x="5" y="3" width="14" height="18" rx="1.5" />
+      <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" />
+      <path d="M10 21v-3h4v3" />
+    </>
+  ),
+  scroll: (
+    <>
+      <path d="M6 4h10a2 2 0 0 1 2 2v11a3 3 0 0 0 3 3H8a2 2 0 0 1-2-2V6a2 2 0 0 0-4 0v1h4" />
+      <path d="M10 9h6M10 13h6" />
+    </>
+  ),
+  dashboard: (
+    <>
+      <rect x="3.5" y="3.5" width="7" height="7" rx="1.2" />
+      <rect x="13.5" y="3.5" width="7" height="7" rx="1.2" />
+      <rect x="3.5" y="13.5" width="7" height="7" rx="1.2" />
+      <rect x="13.5" y="13.5" width="7" height="7" rx="1.2" />
+    </>
+  ),
+  sigma: (
+    <>
+      <path d="M17 5H6l6 7-6 7h11" />
+    </>
+  ),
+  send: (
+    <>
+      <path d="M21 4L3 11l7 3 3 7 8-17z" />
+      <path d="M10 14l4-4" />
+    </>
+  ),
 } as const;
 
 export type IconName = keyof typeof iconPaths;
