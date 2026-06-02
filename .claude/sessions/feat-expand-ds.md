@@ -13,3 +13,6 @@
 - Inlined as JSX in src/components/logo.tsx (ships via transpilePackages, no asset loader). Kept src/assets/fhe-logo.svg.
 - <Logo width decorative title>; height auto from 900:162. v0.5.0. tsc clean, 29/29 tests.
 - Note: auto-trace produced anti-alias color bands (43 fills), not 3 flat brand colors — future color-flatten polish.
+
+### Logo color-flatten — 2026-06-02
+- Quantized PNG to 3 brand colors (sharp luminance buckets) before re-tracing -> 31 paths, exactly navy #0B1D3A / light-blue #9EC5FF / white. Cleaner than the 43-band original (true navy text). Regenerated logo.tsx + asset. v0.5.1.
