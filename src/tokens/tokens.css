@@ -68,6 +68,12 @@
   --shadow-xl: 0 24px 48px rgba(11, 29, 58, 0.16);
   --shadow-focus: 0 0 0 4px rgba(37, 99, 235, 0.18);
 
+  /* Right-side panel edge elevation — left-cast (negative x), navy-tinted.
+   * --shadow-xl only blurs downward; right-side panels need a horizontal cast
+   * so their left edge reads as lifted over the surface (or the dimmed parent). */
+  --shadow-panel: -14px 0 36px -12px rgba(11, 29, 58, 0.14);
+  --shadow-panel-nested: -20px 0 48px -10px rgba(11, 29, 58, 0.22);
+
   /* ---------- Spacing scale (4px base) ---------- */
   --s-1: 4px;
   --s-2: 8px;

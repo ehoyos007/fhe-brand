@@ -8,9 +8,12 @@
 // Overlays
 export * from "./tooltip";
 export * from "./dialog";
+export * from "./dialog-banded";
 export * from "./drawer";
+export * from "./panel";
 export * from "./popover";
 export * from "./dropdown-menu";
+export * from "./overlay-history";
 
 // Navigation & disclosure
 export * from "./tabs";
