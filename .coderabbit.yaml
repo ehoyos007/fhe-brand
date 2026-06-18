@@ -1,0 +1,30 @@
+# CodeRabbit — FHE standard config. Ship to every in-scope repo root as `.coderabbit.yaml`.
+# Automated AI review on every PR, complementing the human (Enzo) approval + the Reviewer Agent.
+# Docs: https://docs.coderabbit.ai/
+language: en-US
+reviews:
+  profile: assertive            # FHE prefers thorough over chatty
+  request_changes_workflow: false   # CodeRabbit comments; Enzo's approval is the gate (COLLABORATION.md §3)
+  high_level_summary: true
+  poem: false
+  review_status: true
+  auto_review:
+    enabled: true
+    drafts: false               # skip draft PRs (WIP) until marked ready
+    base_branches:
+      - main
+      - "feat/.*-rebuild"       # also review integration branches for big rebuilds
+  path_filters:
+    - "!**/*.generated.ts"      # skip generated Supabase types
+    - "!**/node_modules/**"
+    - "!**/.next/**"
+    - "!**/dist/**"
+    - "!**/coverage/**"
+    - "!**/*.lock"
+  path_instructions:
+    - path: "supabase/migrations/**"
+      instructions: "Flag destructive DDL, missing RLS, and any reference to archived (_archived_*, snx_*) tables. Migrations for the shared Operations DB belong only in ally-event-pipeline."
+    - path: "**/*.tsx"
+      instructions: "Check accessibility, that @fhe/brand primitives are used over ad-hoc styles, and no PII is logged."
+chat:
+  auto_reply: true

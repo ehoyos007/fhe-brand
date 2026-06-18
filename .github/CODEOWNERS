@@ -1,0 +1,5 @@
+# Enzo reviews all PRs by default (COLLABORATION.md §3).
+# Split by path as the team grows, e.g.:
+#   /src/components/  @markcaraher @msanguily
+#   /supabase/        @ehoyos007
+* @ehoyos007
