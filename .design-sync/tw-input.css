@@ -1,0 +1,20 @@
+/* @fhe/brand · design-sync Tailwind compile input
+ * Compiles the utility classes actually used across src/**.tsx into a static
+ * stylesheet so Claude Design previews render styled (the package ships no
+ * compiled CSS — the consumer app runs Tailwind). Fonts load remotely; the
+ * CSS-variable values themselves live in tokens.css (shipped as a token file).
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Inline the token system so every CSS var (--fhe-navy, --r-md, --error-500, …)
+ * is DEFINED in the shipped closure — components reference them via arbitrary
+ * utilities. Without this the vars resolve to nothing in Claude Design. */
+@import "../src/tokens/tokens.css";
+@import "tailwindcss";
+
+@theme {
+  --font-head: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@source "../src/**/*.{ts,tsx}";
