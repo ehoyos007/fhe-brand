@@ -1,0 +1,26 @@
+{
+  "projectId": "788ea2e7-cb9f-4038-ab86-1ba94066187c",
+  "pkg": "@fhe/brand",
+  "globalName": "FheBrand",
+  "shape": "package",
+  "tsconfig": "tsconfig.json",
+  "cssEntry": ".design-sync/compiled.css",
+  "overrides": {
+    "Dialog": { "cardMode": "single", "viewport": "880x600" },
+    "BandedDialog": { "cardMode": "single", "viewport": "880x620" },
+    "Drawer": { "cardMode": "single", "viewport": "940x600" },
+    "Panel": { "cardMode": "single", "viewport": "940x620" },
+    "DropdownMenu": { "cardMode": "single", "viewport": "560x460" },
+    "Popover": { "cardMode": "single", "viewport": "600x420" },
+    "Tooltip": { "cardMode": "single", "viewport": "460x300" },
+    "AppShell": { "cardMode": "single", "viewport": "1200x740" },
+    "Sidebar": { "cardMode": "single", "viewport": "360x600" },
+    "DataTable": { "cardMode": "column" },
+    "Board": { "cardMode": "column" },
+    "Pagination": { "cardMode": "column" },
+    "Skeleton": { "cardMode": "column" },
+    "Tabs": { "cardMode": "column" },
+    "SplitPane": { "cardMode": "single", "viewport": "960x560" }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}
